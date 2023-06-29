@@ -35,8 +35,8 @@ jobs:
       - name: setup job variables
         id: job_variables
         run: |
-          echo "::set-output name=firmware-name::${{ matrix.keyboard }}-${{ matrix.keymap }}-${{ matrix.keyboard_config }}-${{ matrix.compile_with }}"
-          echo "::set-output name=hardware-config::$(find ./${{ matrix.keyboard }}/hardware/ -name hardware_config.h | grep ${{ matrix.hardware_config }} )"
+          echo "firmware-name=${{ matrix.keyboard }}-${{ matrix.keymap }}-${{ matrix.keyboard_config }}-${{ matrix.compile_with }}" >> $GITHUB_OUTPUT
+          echo "hardware-config=$(find ./${{ matrix.keyboard }}/hardware/ -name hardware_config.h | grep ${{ matrix.hardware_config }} )" >> $GITHUB_OUTPUT
       - name: create firmware folder
         run: |
           mkdir ${{ steps.job_variables.outputs.firmware-name }}
