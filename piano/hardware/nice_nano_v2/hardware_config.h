@@ -7,7 +7,7 @@
 #define MATRIX_ROWS 1
 #define MATRIX_COLS 9
 #define MATRIX_ROW_PINS { 33 }
-#define MATRIX_COL_PINS { 10, 3, 13, 43, 38, 45, 17, 8, 6 }
+#define MATRIX_COL_PINS { 10, 3, 13, 43, 38, 45, 20, 8, 6 }
 #define UNUSED_PINS {}
 
 // used in debug_cli.cpp to bypass 0.14 and 0.16 that are directly connected to 0.18 (reset)
