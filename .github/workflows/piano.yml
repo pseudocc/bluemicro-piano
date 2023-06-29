@@ -3,14 +3,14 @@
 # rename the name below so that you can see the different keyboards in your github actions
 name: The Piano 2
 
-on:  [push, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   initialize-firmware:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false 
-      max-parallel: 1  
+      fail-fast: false
+      max-parallel: 2
       matrix:
         keyboard: [piano]
         keymap: [default]
@@ -52,7 +52,7 @@ jobs:
           cp ./${{ matrix.keyboard }}/config/${{ matrix.keyboard_config }}/keyboard_config.h ${{ steps.job_variables.outputs.firmware-name }}
           cp ${{ steps.job_variables.outputs.hardware-config }} ${{ steps.job_variables.outputs.firmware-name }}
           cp ./${{ matrix.keyboard }}/keymaps/${{ matrix.keymap }}/keymap.h ${{ steps.job_variables.outputs.firmware-name }}
-          cp ./${{ matrix.keyboard }}/keymaps/${{ matrix.keymap }}/keymap.cpp ${{ steps.job_variables.outputs.firmware-name }} 
+          cp ./${{ matrix.keyboard }}/keymaps/${{ matrix.keymap }}/keymap.cpp ${{ steps.job_variables.outputs.firmware-name }}
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
@@ -61,7 +61,7 @@ jobs:
       # configure the Arduino CLI on the system.
       - name: Setup Arduino CLI
         uses: arduino/setup-arduino-cli@v1.1.1
-        
+
       - name: Install BSP and Libraries
         env:
           BSP_URL: https://github.com/jpconstantineau/Community_nRF52_Arduino/releases/latest/download/package_jpconstantineau_boards_index.json
