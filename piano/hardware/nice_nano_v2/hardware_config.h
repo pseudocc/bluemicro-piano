@@ -4,10 +4,30 @@
 
 #include "hardware_variants.h"
 
+/**
+ * nice!nano v2 Pinouts
+ *      _________
+ * +----|       |----+
+ * | B- |       | B+ | // this 2 pins are not used
+ * |006 |       | RAW|
+ * |008 | -   - | GND|
+ * |GND           RST|
+ * |GND           VCC|
+ * |017           031|
+ * |020  +-----+  029|
+ * |022  |     |  002|
+ * |024  |     |  115|
+ * |100  +-----+  113|
+ * |011           111|
+ * |104 nice!nano 010|
+ * |106 v2.0 /\/\ 009|
+ * +-----------------+
+**/
+
 #define MATRIX_ROWS 1
 #define MATRIX_COLS 9
 #define MATRIX_ROW_PINS { 33 }
-#define MATRIX_COL_PINS { 10, 3, 13, 43, 38, 45, 20, 8, 6 }
+#define MATRIX_COL_PINS { 36, 43, 24, 9, 38, 45, 22, 8, 6 }
 #define UNUSED_PINS {}
 
 // used in debug_cli.cpp to bypass 0.14 and 0.16 that are directly connected to 0.18 (reset)

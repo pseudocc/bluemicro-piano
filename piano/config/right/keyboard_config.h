@@ -9,8 +9,8 @@
 
 #define KEYBOARD_SIDE RIGHT
 
-#define DEVICE_NAME_R		"piano2L"
-#define DEVICE_NAME_L		"piano2R"
+#define DEVICE_NAME_R		"piano2R"
+#define DEVICE_NAME_L		"piano2L"
 #define DEVICE_NAME_M		"The Piano 2"
 #define DEVICE_MODEL		"Piano2"
 #define MANUFACTURER_NAME	"pseudocc"
