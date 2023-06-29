@@ -1,7 +1,6 @@
+name: Erase Flash
 
-name: Test examples
-
-on: [pull_request, push, 'workflow_dispatch']
+on: [workflow_dispatch]
 
 jobs:
   build:
